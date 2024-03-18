@@ -1,0 +1,165 @@
+html{
+    background-color: rgb(31, 30, 30);
+    color: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+    background: #2e2e2e;
+    padding: 2rem 0rem;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    height: 6rem;
+    padding: 0 4rem;
+    background: black;
+    border-bottom: 1px solid #2e2e2e;
+    margin: 0;
+}
+
+.header-container .logo-container {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: inherit;
+}
+
+.logo-name {
+    font-size: 2rem;
+}
+
+.header-items {
+    display: flex;
+    align-items: center;
+}
+
+.header-items > ul, .footer-list > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3rem;
+}
+
+.header-items > ul > li > a {
+    text-decoration: none;
+    color: inherit
+}
+
+.funtions-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Basic styling for the input field */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none; /* Remove default outline */
+}
+
+/* Optional: Style when input is focused */
+input[type="text"]:focus {
+    border-color: blue;
+    box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Example of adding a box shadow when focused */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 4px;
+    cursor: pointer; /* Show pointer cursor on hover */
+    font-size: 16px;
+}
+
+/* Optional: Style when button is hovered */
+button:hover {
+    background-color: #0056b3; /* Darker shade of blue */
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    justify-content: space-evenly;
+}
+
+.restaurant-card {
+    padding: 1rem;
+    flex-direction: column;
+    width: 15rem;
+    height: 20rem;
+    display: flex;
+    border: 1px solid #5e5e5e;
+}
+
+.res-name {
+    display: flex;
+    font-size: 1rem;
+    height: 3rem;
+}
+
+.res-logo {
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+}
+
+.res-logo > img {
+    /* height: 10rem; */
+    height: inherit;
+    object-fit: cover;
+}
+
+.res-details{
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0.5rem;
+}
+
+.res-details > span {
+    height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.5rem;
+}
+
+.restaurant-card:hover {
+    box-shadow: 0px 0px 20px rgba(109, 106, 106, 0.2); /* Increase box shadow on hover */
+    cursor: pointer;
+  }
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}

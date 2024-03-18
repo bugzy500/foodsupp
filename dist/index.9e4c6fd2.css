@@ -1,0 +1,162 @@
+html {
+  color: #fff;
+  background-color: #1f1e1e;
+}
+
+body {
+  margin: 0;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+}
+
+.main-container {
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+}
+
+.body-container {
+  background: #2e2e2e;
+  flex-direction: column;
+  padding: 2rem 0;
+  display: flex;
+}
+
+.header-container {
+  background: #000;
+  border-bottom: 1px solid #2e2e2e;
+  justify-content: space-between;
+  height: 6rem;
+  margin: 0;
+  padding: 0 4rem;
+  display: flex;
+}
+
+.header-container .logo-container {
+  align-items: center;
+  height: 6rem;
+  display: flex;
+}
+
+.logo-img {
+  height: inherit;
+}
+
+.logo-name {
+  font-size: 2rem;
+}
+
+.header-items {
+  align-items: center;
+  display: flex;
+}
+
+.header-items > ul, .footer-list > ul {
+  justify-content: space-evenly;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.header-items > ul > li > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.funtions-container {
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  display: flex;
+}
+
+input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus {
+  border-color: #00f;
+  box-shadow: 0 0 5px #0000ff80;
+}
+
+button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.res-container {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+  padding: 2rem;
+  display: flex;
+}
+
+.restaurant-card {
+  border: 1px solid #5e5e5e;
+  flex-direction: column;
+  width: 15rem;
+  height: 20rem;
+  padding: 1rem;
+  display: flex;
+}
+
+.res-name {
+  height: 3rem;
+  font-size: 1rem;
+  display: flex;
+}
+
+.res-logo {
+  flex-direction: column;
+  height: 10rem;
+  display: flex;
+}
+
+.res-logo > img {
+  height: inherit;
+  object-fit: cover;
+}
+
+.res-details {
+  flex-direction: column;
+  height: 7rem;
+  margin: .5rem;
+  display: flex;
+  overflow: hidden;
+}
+
+.res-details > span {
+  text-overflow: ellipsis;
+  height: 1.5rem;
+  margin-bottom: .5rem;
+  overflow: hidden;
+}
+
+.restaurant-card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px #6d6a6a33;
+}
+
+.footer-container {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+/*# sourceMappingURL=index.9e4c6fd2.css.map */
