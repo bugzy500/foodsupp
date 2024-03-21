@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { FOOD_API } from "../utils/api";
 import ShimmerLoad from "./ShimmerLoading";
+import { Link } from "react-router-dom"
 
 function filterData(searchText, restaurants) {
 
@@ -67,7 +68,9 @@ const Body = () => {
             </div>
             <div className="res-container">
                 {filterRestaurants.map((res) => {
-                    return (<RestaurantCard key={res.info.id} resData={res}></RestaurantCard>)
+                    return (<Link to={"/restaurant/" + res.info.id} key={res.info.id}>
+                            <RestaurantCard key={res.info.id} resData={res}></RestaurantCard>
+                        </Link>)
                 })}
             </div>
         </div>

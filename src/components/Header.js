@@ -16,6 +16,8 @@ const Header = () => {
                     {headerList.map((item,id) => {
                         if(item === 'About')
                             return (<li key={id}><Link to="/about"> {item} </Link></li>)
+                        else if(item === 'Home')
+                            return (<li key={id}><Link to="/"> {item} </Link></li>)
                         else
                             return (<li key={id}> {item} </li>)
                     })}
