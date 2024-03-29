@@ -22,4 +22,19 @@ const RestaurantCard = (props) => {
     )
 }
 
+export const withPromotedLabel = (RestaurantCard) => {
+    return (props) => {
+        //console.log(props)
+        const {resData} = props
+        return (
+            <div>
+                <label className="rating-container">
+                    Highly rated
+                </label>
+                <RestaurantCard resData={resData}/>
+            </div>
+        )
+    }
+}
+
 export default RestaurantCard

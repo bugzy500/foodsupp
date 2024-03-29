@@ -7,10 +7,12 @@ const Header = () => {
     console.log('header init')
     return (
         <div className="header-container">
-            <div className="logo-container">
-                <img src={CDN_LOGO} className="logo-img"></img> 
-                <div className="logo-name">FoodSupp</div>
-            </div>
+            <Link to="/">
+                <div className="logo-container">
+                    <img src={CDN_LOGO} className="logo-img"></img> 
+                    <div className="logo-name">FoodSupp</div>
+                </div>
+            </Link>
             <div className="header-items">
                 <ul>
                     {headerList.map((item,id) => {

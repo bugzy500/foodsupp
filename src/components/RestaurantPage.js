@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react"
-import { RESTAURANT_API } from "../utils/api"
+import { useState } from "react"
 import ShimmerLoad from "./ShimmerLoading"
 import { useParams } from "react-router-dom"
 import useRestaurantData from "../customHooks/useRestaurantData"
+import RestaurantCategory from "./RestaurantCategory"
 
 const RestaurantPage = () => {
 
     const { resId } = useParams();
     
     const resDetails = useRestaurantData(resId)
+
+    const [showIndex, setShowIndex] = useState(0)
 
     //const [resDetails, setResDetails] = useState([])
 
@@ -33,24 +35,39 @@ const RestaurantPage = () => {
 
     console.log('respage', resId, resDetails)
 
-    if(resDetails === null)
+    if (resDetails === null)
         return <ShimmerLoad/>
+
+    const { name, cuisines, avgRating, costForTwo } = resDetails?.data?.cards[2]?.card?.card?.info
+
+    const categories = resDetails?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => {
+        return c?.card?.card?.['@type'] === 'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
+    })
+
+    console.log(categories)
+
+    // <div key={index}>{item.card.info.name + ' - Rs.' + (Number(item.card.info.price)/100 || Number(item.card.info.defaultPrice)/100)} </div>
 
     return (
         <div className="menu">
-            <h1>{resDetails?.data.cards[0].card.card.info.name}</h1>
-            <h2>{resDetails?.data.cards[0].card.card.info.cuisines.join(', ')}</h2>
+            <h1>{name}</h1>
+            <h2>{cuisines.join(', ')}</h2>
             <ul>
-                <li>Average rating - {resDetails?.data.cards[0].card.card.info.avgRating}</li>
-                <li>Cost for 2 - {Number(resDetails?.data.cards[0].card.card.info.costForTwo)/100}</li>
+                <li>Average rating - {avgRating}</li>
+                <li>Cost for 2 - { Number(costForTwo)/100 }</li>
             </ul>
-            <ul>
-                {resDetails.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards.map((item,index) => {
+            {/* <ul>
+                {resDetails.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards.map((item,index) => {
                     return (
-                    <div key={index}>{item.card.info.name + ' - Rs.' + Number(item.card.info.price)/100} </div>
+                    <div key={index}>{item.card.info.name + ' - Rs.' + (Number(item.card.info.price)/100 || Number(item.card.info.defaultPrice)/100)} </div>
                     )
                 })}
-            </ul>
+            </ul> */}
+            <div className="restaurant-categories">
+                {categories.map((item, index) => {
+                    return (<RestaurantCategory key={index} category={item} showItem={index === showIndex ? true : false} setShowIndex={() => setShowIndex(index)}/>)
+                })}
+            </div>
         </div>
         
     )

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 //import FoodData from "../utils/mockData";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import { FOOD_API } from "../utils/api";
 import ShimmerLoad from "./ShimmerLoading";
 import { Link } from "react-router-dom"
@@ -20,6 +20,8 @@ const Body = () => {
     const [filterRestaurants, setFilterRestaurants] = useState([])
     const [searchTerm, setSearchTerm] = useState('');
     //let searchTerm = ''
+
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard)
 
     useEffect( () => {
        fetchData()
@@ -68,9 +70,13 @@ const Body = () => {
             </div>
             <div className="res-container">
                 {filterRestaurants.map((res) => {
-                    return (<Link to={"/restaurant/" + res.info.id} key={res.info.id}>
-                            <RestaurantCard key={res.info.id} resData={res}></RestaurantCard>
-                        </Link>)
+                    return (
+                    <Link to={"/restaurant/" + res.info.id} key={res.info.id}>
+                        {
+                            res.info.avgRating > 4.3 ? <RestaurantCardPromoted key={res.info.id} resData={res}/> : <RestaurantCard key={res.info.id} resData={res}></RestaurantCard>
+                        } 
+                    </Link>
+                    )
                 })}
             </div>
         </div>

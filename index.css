@@ -32,6 +32,11 @@ body {
     margin: 0;
 }
 
+.header-container > a {
+    text-decoration: none;
+    color: inherit
+}
+
 .header-container .logo-container {
     height: 6rem;
     display: flex;
@@ -110,7 +115,7 @@ button:hover {
 .res-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 2rem;
     justify-content: space-evenly;
 }
@@ -172,4 +177,71 @@ button:hover {
     align-items: center;
     width: 100%;
     justify-content: center;
+}
+
+.rating-container {
+    position: absolute;
+    transform: translate(-10px, -15px);
+    background: black;
+    padding: 0.25rem 0.4rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu > ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.restaurant-categories {
+    display: flex;
+    flex-direction: column;
+    width: 70rem;
+    gap: 2rem;
+}
+
+.restaurant-category {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid gray;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px 0px #3e3a3a;
+}
+
+.res-cat-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+}
+
+.itemlist-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
