@@ -1,5 +1,9 @@
 # Components
 - Header
 - Body
-- Restraunt Card
+- Restaurant Card
 - Footer
+
+# APIs
+- Menu
+- Restaurant Details
